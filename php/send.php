@@ -48,7 +48,10 @@ $name = $_POST['name'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
 $password = $_POST['password'];
-$sql=  "INSERT INTO `user` ( `name`, `email`, `phone`,`password`) VALUES ( '$name', '$email', '$phone','$password')";
+
+$encryptPassword= password_hash($password,PASSWORD_DEFAULT);
+
+$sql=  "INSERT INTO `user` ( `name`, `email`, `phone`,`password`) VALUES ( '$name', '$email', '$phone','$encryptPassword')";
 //$sql= "INSERT INTO user ( name, email, phone) VALUES ('$name', '$email', '$phone')";
 // $sql = "INSERT INTO user  VALUES ('$name','$email','$phone')";
 
