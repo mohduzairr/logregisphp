@@ -22,7 +22,50 @@ if(@$_POST['phone'] == ""){
     </script>";
     return false;
 }
+if(@$_POST['password'] == ""){
+    echo "<script>
+    alert('password number is Required');
+    window.location.href='../index.php';
+    </script>";
+    return false;
+}
 
-$name = addslashes(strip_tags($_POST['name'])); 
-echo $name;
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "food";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password,$database);
+
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+
+$name = $_POST['name'];
+$email = $_POST['email'];
+$phone = $_POST['phone'];
+$password = $_POST['password'];
+$sql=  "INSERT INTO `user` ( `name`, `email`, `phone`,`password`) VALUES ( '$name', '$email', '$phone','$password')";
+//$sql= "INSERT INTO user ( name, email, phone) VALUES ('$name', '$email', '$phone')";
+// $sql = "INSERT INTO user  VALUES ('$name','$email','$phone')";
+
+if(mysqli_query($conn, $sql)){
+    echo "<script>
+    alert('successfuly registered');
+    window.location.href='../index.php';
+    </script>";
+} else{
+    echo "<script>
+    alert('something wrong');
+    window.location.href='../index.php';
+    </script>";
+       
+}
+ 
+// Close connection
+mysqli_close($conn);
+
 ?>

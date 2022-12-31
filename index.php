@@ -55,6 +55,10 @@
                                 <label class="sr-only">Phone</label>
                                 <input type="text" class="form-control" name="phone" placeholder="Phone" required>
                             </div>
+                            <div class="form-group">
+                                <label class="sr-only">Password</label>
+                                <input type="text" class="form-control" name="password" placeholder="password" required>
+                            </div>
                             <button type="submit" class="btn btn-primary mt-2 btn-lg">Submit</button>
                         </form>
                     </div>
