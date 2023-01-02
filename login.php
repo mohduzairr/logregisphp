@@ -41,7 +41,7 @@
                 <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
                     <h1 class="display-4 py-2 text-truncate">Login</h1>
                     <div class="px-2">
-                        <form action="php/send.php" method="POST" class="justify-content-center">
+                        <form action="php/auth.php" method="POST" class="justify-content-center">
                            
                             
                             <div class="form-group">
